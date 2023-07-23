@@ -23,9 +23,15 @@ import (
 )
 
 func main() {
-	cmd := cmd.NewConfirmCommand()
-	err := cmd.Execute()
-	if err != nil {
-		_ = fmt.Errorf("confirm failed: %s", err)
+	if containsDeleteCommand(kubectlCmd) {
+		fmt.Println("명령어에 delete 명령이 포함되어 있습니다.")
+		
+		cmd := cmd.NewConfirmCommand()
+		err := cmd.Execute()
+		if err != nil {
+			_ = fmt.Errorf("confirm failed: %s", err)
+		}	
+	} else {
+		return
 	}
 }
