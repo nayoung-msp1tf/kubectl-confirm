@@ -31,7 +31,5 @@ func main() {
 		if err != nil {
 			_ = fmt.Errorf("confirm failed: %s", err)
 		}	
-	} else {
-		return
 	}
 }
