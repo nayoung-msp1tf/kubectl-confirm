@@ -23,7 +23,7 @@ import (
 )
 
 func main() {
-	if containsDeleteCommand(kubectlCmd) {
+	if containsDeleteCommand(cmd) {
 		fmt.Println("명령어에 delete 명령이 포함되어 있습니다.")
 		
 		cmd := cmd.NewConfirmCommand()
